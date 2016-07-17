@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -30,8 +32,11 @@ public class EmployeeJSONData {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/EmployeeManagement","root","root");
-			
-			Object obj = parser.parse(new FileReader("C:\\Users\\Jaykrishna\\workspace\\Employee Management\\EmployeeData.json"));
+			Scanner filename = new Scanner(System.in);
+	        String input;
+	        System.out.print("Enter the JSON file for reading information: ");
+	        input = filename.next().trim();
+			Object obj = parser.parse(new FileReader(input));
 			JSONArray array = (JSONArray) obj;
 			
 			for(int i=0;i<array.size();i++){
@@ -79,8 +84,11 @@ public class EmployeeJSONData {
 			    m1.put("Id", rs.getInt("Id"));
 			    l1.add(m1);
 			}
-		
-			File file=new File("C:\\Users\\Jaykrishna\\workspace\\Employee Management\\EmployeeData1.json");      
+			Scanner filename = new Scanner(System.in);
+	        String input;
+	        System.out.print("Enter the JSON file for store information: ");
+	        input = filename.next().trim();
+			File file=new File(input);      
 			file.createNewFile();             
 			FileWriter fileWriter = new FileWriter(file);
 			String jsonString = JSONValue.toJSONString(l1);
