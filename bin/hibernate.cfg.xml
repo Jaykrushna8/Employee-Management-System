@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/EmployeeManagement</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Update the data into existing tables-->
+        <property name="hbm2ddl.auto">update</property>
+ 
+        <!-- Mention here all the model classes along with their package name -->
+ 		<mapping class="com.assessment.emplyeeinfo.Employee"/>
+ 		<mapping class="com.assessment.emplyeeinfo.FulltimeEmployee"/>
+ 		<mapping class="com.assessment.emplyeeinfo.ParttimeEmployee"/>
+ 		<mapping class="com.assessment.emplyeeinfo.InternEmployee"/>
+ 		
+ 		 
+    </session-factory>
+</hibernate-configuration>

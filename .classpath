@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_66"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate Library"/>
+	<classpathentry kind="lib" path="C:/Users/Jaykrishna/Downloads/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jaykrishna/Downloads/json_simple-1.1-all/json_simple-1.1-all/lib/json_simple-1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

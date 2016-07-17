@@ -1,0 +1,29 @@
+[
+{
+	"Id":5,
+	"firstname": "Sachin",
+	"lastname": "Jagar",
+	"contactno": 789456213,
+	"address": "India",
+	"salary": 7800,
+	"employeetype": "Fulltime"
+},
+{
+	"Id":6,
+	"firstname": "Laura",
+	"lastname": "Bretan",
+	"contactno": 216456123,
+	"address": "Ohio",
+	"salary": 40,
+	"employeetype": "Parttime"
+},
+{
+	"Id":7,
+	"firstname": "Julia",
+	"lastname": "Scotti",
+	"contactno": 515456213,
+	"address": "NewJersey",
+	"salary": 75,
+	"employeetype": "Intern"
+}
+]
