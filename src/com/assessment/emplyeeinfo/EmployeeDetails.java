@@ -2,7 +2,6 @@ package com.assessment.emplyeeinfo;
 
 import java.util.HashMap;
 import java.util.List;
-import javax.persistence.Query;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.SQLQuery;
@@ -25,7 +24,7 @@ public class EmployeeDetails {
 		
 		   EmployeeDetails emp = new EmployeeDetails();
 		
-		   System.out.println("Insert a new employees into the database");
+		   System.out.println("Insert a new Employee into database");
 	       Integer emp1 = emp.insertEmployee("Sam", "Shah", "California", 216575123, 4000, "Fulltime");
 	       Integer emp2 = emp.insertEmployee("Akky", "Kumar" ,"Florida", 515865968,45, "Parttime");
 	       Integer emp3 = emp.insertEmployee("Abhay", "Patel","Newyork", 875876925 ,25,"Intern");
@@ -34,8 +33,8 @@ public class EmployeeDetails {
 	       emp.getallEmployees();
 	       System.out.println("--------------*************---------------");
 	       
-	       System.out.println("Edit Employee's Salary in the database");
-	       emp.editEmployee(emp1, 5000);
+	       System.out.println("Edit Employee Salary & Contact Number in the database");
+	       emp.editEmployee(emp1, 5000,874852963);
 	       System.out.println("After updation,get all Employees information from the database");
 	       emp.getallEmployees();
 	       System.out.println("--------------*************---------------");
@@ -66,13 +65,13 @@ public class EmployeeDetails {
 	      return empid;
 	   }
 	  
-	   /* Function to Edit an Employee's Salary in the database */
-	   public void editEmployee(Integer Empid, int salary ){
+	   /* Function to Edit an Employee Salary & Contact Number in the database */
+	   public void editEmployee(Integer Empid, int salary, long contactno ){
 		  Transaction trans = null;
 		  Session session = factory.openSession();
 	      try{
 	         trans = session.beginTransaction();
-	         String sql = "UPDATE Employee_Information set Salary = '" + salary + "' WHERE Id = '" + Empid +"'";
+	         String sql = "UPDATE Employee_Information set Salary = '" + salary + "', ContactNumber = '"+ contactno + "' WHERE Id = '" + Empid +"'";
 	         SQLQuery sqlQry = session.createSQLQuery(sql);
 	         sqlQry.executeUpdate();
 	         trans.commit();
